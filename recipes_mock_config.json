@@ -1,0 +1,34 @@
+{
+    "recipes": [
+        {
+            "user_id": 1,
+            "recipes_count" : 10,
+            "recipes_type" : 1,
+            "public": true
+        },
+        {
+            "user_id": 2,
+            "recipes_count" : 15,
+            "recipes_type" : 1,
+            "public": false
+        },
+        {
+            "user_id": 3,
+            "recipes_count" : 50,
+            "recipes_type" : 1,
+            "public": true
+        },
+        {
+            "user_id": 4,
+            "recipes_count" : 25,
+            "recipes_type" : 2,
+            "public": true
+        },
+        {
+            "user_id": 5,
+            "recipes_count" : 5,
+            "recipes_type" : 3,
+            "public": false
+        }
+    ]
+}

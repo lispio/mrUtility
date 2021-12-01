@@ -25,5 +25,5 @@ class db(Enum):
 
 
 class db_query(Enum):
-    GET_CONFIG = "SELECT id, name, host, port, status, in_use, type, des FROM config_svr"
-    UPDATE_CONFIG = "UPDATE config_svr SET "
+    ADD_USER = "INSERT INTO users (name, password, email) VALUES "
+    ADD_RECIPES = "INSERT INTO recipes(name, user_id, recipes_type, is_public) VALUES "
