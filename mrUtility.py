@@ -40,14 +40,6 @@ def parse_args():
     services.add_argument("-stop", action="store_true", help="stop all services")
     services.add_argument("-restart", action="store_true", help="restart all services")
 
-    config = subparsers.add_parser("config", help="services management")
-    config.add_argument("-view", action="store_true", help="display config")
-    config.add_argument("-name", type=str, default=None, help="update name")
-    config.add_argument("-host", type=str, default=None, help="update host")
-    config.add_argument("-port", type=str, default=None, help="update port")
-    config.add_argument("-type", type=str, default=None, help="update server type")
-    config.add_argument("-des", type=str, default=None, help="update server descrypion")
-
     mock = subparsers.add_parser("mock", help="mock data")
     mock.add_argument("-file", type=str, help="mock")
 
@@ -100,7 +92,6 @@ def main():
     if a.subcommand == 'mock':
         if a.file:
             print(f"test mock {a.file}")
-            read_config_file(a.file)
 
 
 if __name__ == "__main__":
