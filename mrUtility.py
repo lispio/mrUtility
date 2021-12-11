@@ -9,6 +9,7 @@ from src.services import *
 from src.db import create_db, applay_migration, run_query
 from src.display import display_service, display_config
 from src.configSvr import update_name, update_host, update_port, update_type, update_description
+from src.mock import mock
 
 
 def parse_args():
@@ -41,7 +42,8 @@ def parse_args():
     services.add_argument("-restart", action="store_true", help="restart all services")
 
     mock = subparsers.add_parser("mock", help="mock data")
-    mock.add_argument("-file", type=str, help="mock")
+    mock.add_argument("-uc", type=str, help="user count ")
+    mock.add_argument("-rc", type=str, help="recipes count ")
 
     return parser.parse_args()
 
@@ -90,9 +92,17 @@ def main():
             update_description(a.des)
 
     if a.subcommand == 'mock':
-        if a.file:
-            print(f"test mock {a.file}")
+        m = mock()
+        if a.uc:
+            print("mock users ")
+            m.mock_users(a.uc)
+            print("done")
 
+        if a.rc:
+            print("mock recipes ")
+            m.mock_recipes(a.rc)
+            print("done")
+            
 
 if __name__ == "__main__":
     sys.exit(main())
